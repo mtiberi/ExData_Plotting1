@@ -18,7 +18,6 @@ load.data<- function() {
   d<- read.csv(section, sep=";")
   d$Time=strptime(paste(d$Date, d$Time, sep=" "), format="%d/%m/%Y %H:%M:%S") 
   d$Time=as.POSIXct(d$Time)
-  d$Date=substr(weekdays(as.Date(d$Date, "%d/%m/%Y")),1,3)
   d
 }
 
